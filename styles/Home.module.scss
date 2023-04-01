@@ -1,0 +1,16 @@
+
+.app {
+    height: 100vh;
+    max-width: var(max-width);
+
+    &--nav-con {
+        height: 100%;
+        flex: 1;
+    }
+
+    &--page-content {
+        padding: 30px;
+        width: 100%;
+        height: 100%;
+    }
+}
