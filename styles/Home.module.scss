@@ -23,21 +23,26 @@
     &--header {
         width: 100%;
     }  
-    
-    &--charts-section {
-        display: grid;
-        grid-template-columns: 0.6fr 0.4fr;
-        column-gap: 30px;
-        width: 100%;
-        height: 400px;
-        position: relative;
-    }
-
-    &--doughnut {
-        width: 100% !important;
-        height: 100%;
-        object-fit: contain;
-        position: relative !important;
-    }
-
 }
+
+.charts {
+    height: 400px;
+    width: 100%;
+    margin-top: 30px;
+
+    .linechart {
+        position: relative;
+        height: 100%;
+        width: 60%;
+        object-fit: contain;
+        overflow: hidden;
+    }
+    
+    .doughnut {
+        position: relative;
+        height: 100%;
+        // right: 0;
+        flex: 1;
+    }
+}
+

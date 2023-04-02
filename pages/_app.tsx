@@ -12,7 +12,7 @@ export default function App({ Component, pageProps }: AppProps) {
 				<Flexbox className={styles['app--nav-con']}>
 					<Navigation />
 				</Flexbox>
-				<Flexbox className={styles['app--page-content']}>
+				<Flexbox direction="column" className={styles['app--page-content']}>
 					<Component {...pageProps} />
 				</Flexbox>
 			</Flexbox>

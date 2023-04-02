@@ -22,31 +22,33 @@ export default function Home() {
 	);
 
 	return (
-		<Flexbox direction="column" gap={30} className={styles['homepage']}>
-			<Flexbox justifyContent="space-between" className={styles['homepage--header']}>
-				<h1>Dashboard</h1>
-				<Flexbox gap={15}>
-					<DatePicker date="10-06-2021" />
-					<DatePicker date="10-10-2023" />
+		<>
+			<Flexbox direction="column" gap={30} className={styles['homepage']}>
+				<Flexbox justifyContent="space-between" className={styles['homepage--header']}>
+					<h1>Dashboard</h1>
+					<Flexbox gap={15}>
+						<DatePicker date="10-06-2021" />
+						<DatePicker date="10-10-2023" />
+					</Flexbox>
+				</Flexbox>
+				<Flexbox width="100%" alignItems="center" gap={30}>
+					{productSummary.map(product => {
+						return <ProductSummary key={product.id} {...product} />;
+					})}
 				</Flexbox>
 			</Flexbox>
-			<Flexbox width="100%" alignItems="center" gap={30}>
-				{productSummary.map(product => {
-					return <ProductSummary key={product.id} {...product} />;
-				})}
-			</Flexbox>
-			<div className={styles['homepage--charts-section']}>
-				<Card>
-					<div style={{ position: 'relative', width: '100%', height: '100%' }}>
+			<Flexbox gap={30} className={styles['charts']}>
+				<Card className={styles['linechart']}>
+					<div style={{ width: '100%', position: 'absolute', height: '80%', bottom: '0' }}>
 						<LineChart />
 					</div>
 				</Card>
-				<Card>
-					<div style={{ position: 'relative', width: '100%', height: '100%' }}>
+				<Card className={styles['doughnut']}>
+					<div style={{ width: '90%', position: 'absolute', height: '80%' }}>
 						<DoughnutChart />
 					</div>
 				</Card>
-			</div>
-		</Flexbox>
+			</Flexbox>
+		</>
 	);
 }
