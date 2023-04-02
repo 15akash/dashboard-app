@@ -1,4 +1,4 @@
-import { useMemo, useContext, useCallback } from 'react';
+import { useMemo, useContext } from 'react';
 import Flexbox from '@/ui/foundations/flexbox';
 import styles from '../styles/Home.module.scss';
 import DatePicker from '@/ui/components/date-picker';
@@ -8,7 +8,6 @@ import DoughnutChart from '@/ui/components/doughnut-chart';
 import Card from '@/ui/foundations/card';
 import LineChart from '@/ui/components/line-chart';
 import MenuContext from '@/ui/store/menu-context';
-import { Menu } from '@/ui/assets/Menu';
 import CardHeader from '@/ui/components/card-header';
 import TopSellingProducts from '@/ui/components/top-selling-products';
 import RecentOrders from '@/ui/components/recent-orders';

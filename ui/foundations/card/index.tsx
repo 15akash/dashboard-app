@@ -5,7 +5,6 @@ import Flexbox from '../flexbox';
 interface CardProps {
 	className?: string;
 	children: ReactNode;
-	props?: any;
 	width?: string;
 }
 
