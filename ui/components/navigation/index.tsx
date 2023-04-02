@@ -12,8 +12,6 @@ import Link from 'next/link';
 const Navigation = () => {
 	const menuCtx = useContext(MenuContext);
 
-	console.log('menu ctx', menuCtx.activeMenu);
-
 	const menuItems: MenuItem[] = useMemo(
 		() => [
 			{
@@ -38,7 +36,7 @@ const Navigation = () => {
 			justifyContent="space-between"
 			className={menuCtx.isMenuCollapsed ? `${styles['navigation-mobile']} ${styles['navigation']}` : styles['navigation']}>
 			<Flexbox direction="column" className={styles['navigation-logo-menu']}>
-				<Flexbox direction={menuCtx.isMenuCollapsed ? 'column' : 'row'} alignItems="center" justifyContent="center" className={styles['navigation--logo']}>
+				<Flexbox direction={menuCtx.isMenuCollapsed ? 'column' : 'row'} gap={15} alignItems="center" justifyContent="center" className={styles['navigation--logo']}>
 					<Logo />
 					<h4>Base</h4>
 				</Flexbox>
@@ -59,12 +57,13 @@ const Navigation = () => {
 					);
 				})}
 			</Flexbox>
-			<Flexbox justifyContent="center" direction="column" alignItems="center" className={styles['navigation--bottom']}>
+			<Flexbox justifyContent="center" direction="column" alignItems="center" gap={20} className={styles['navigation--bottom']}>
 				{!menuCtx.isMenuCollapsed && <Image src={Illustration} style={{ margin: '0 auto', objectFit: 'contain', height: '150px' }} alt="illustration" />}
 				<Flexbox
 					direction={menuCtx.isMenuCollapsed ? 'column' : 'row'}
 					className={styles['navigation--bottom-profile-section']}
 					justifyContent="space-between"
+					gap={15}
 					alignItems="center">
 					<ProfilePhoto />
 					{!menuCtx.isMenuCollapsed && (

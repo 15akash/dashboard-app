@@ -1,9 +1,20 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import styles from './card.module.scss';
 import Flexbox from '../flexbox';
 
-const Card = (props: any) => {
-	return <Flexbox className={styles.card}>{props.children}</Flexbox>;
+interface CardProps {
+	className?: string;
+	children: ReactNode;
+	props?: any;
+	width?: string;
+}
+
+const Card = ({ className, children, ...props }: CardProps) => {
+	return (
+		<Flexbox className={`${styles['card']} ${className}`} {...props}>
+			{children}
+		</Flexbox>
+	);
 };
 
 export default Card;

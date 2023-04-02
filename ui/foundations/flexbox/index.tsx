@@ -5,11 +5,23 @@ interface FlexboxProps {
 	justifyContent?: 'flex-start' | 'flex-end' | 'center' | 'space-between' | 'space-around' | 'space-evenly';
 	alignItems?: 'flex-start' | 'flex-end' | 'center' | 'baseline' | 'stretch';
 	children?: ReactNode;
+	gap?: number;
+	width?: string | undefined;
 	className?: string;
 	onClick?: () => void;
 }
 
-const Flexbox = ({ direction = 'row', justifyContent = 'flex-start', alignItems = 'flex-start', children, onClick, className, ...props }: FlexboxProps) => {
+const Flexbox = ({
+	direction = 'row',
+	gap = 0,
+	width = undefined,
+	justifyContent = 'flex-start',
+	alignItems = 'flex-start',
+	children,
+	onClick,
+	className,
+	...props
+}: FlexboxProps) => {
 	return (
 		<div
 			className={className}
@@ -17,7 +29,9 @@ const Flexbox = ({ direction = 'row', justifyContent = 'flex-start', alignItems 
 				display: 'flex',
 				flexDirection: direction,
 				justifyContent,
-				alignItems
+				alignItems,
+				gap,
+				width
 			}}
 			onClick={onClick}
 			{...props}>

@@ -1,11 +1,10 @@
-import { useReducer } from 'react';
+import { useMemo, useReducer } from 'react';
 import MenuContext from './menu-context';
 import { IActionType } from '../interface';
 import { useRouter } from 'next/router';
 
 const defaultMenuState = {
-	// activeMenu: useRouter().pathname.slice(1, useRouter().pathname.length) ?? 'dashboard',
-	isMenuCollapsed: true
+	isMenuCollapsed: false
 };
 
 const menuReducer = (state: any, action: IActionType) => {
@@ -19,10 +18,12 @@ const menuReducer = (state: any, action: IActionType) => {
 };
 
 const MenuProvider = (props: any) => {
-	const router = useRouter();
-	const activeMenu = router.pathname.slice(1, router.pathname.length) ?? 'dashboard';
-	console.log('active menu', activeMenu);
+	const router = useRouter().pathname;
+
+	const activeMenu = useMemo(() => router.slice(1, router.length) ?? 'dashboard', [router]);
+
 	const [menuState, dispatchMenuAction] = useReducer(menuReducer, defaultMenuState);
+
 	const menuContext = {
 		activeMenu: activeMenu,
 		changeActiveMenu: (menu: string) => {
@@ -30,7 +31,6 @@ const MenuProvider = (props: any) => {
 		},
 		isMenuCollapsed: menuState.isMenuCollapsed,
 		toggleMenu: (toggle: boolean) => {
-			console.log('toggle', toggle);
 			dispatchMenuAction({ type: 'TOGGLE_MENU', item: toggle });
 		}
 	};
