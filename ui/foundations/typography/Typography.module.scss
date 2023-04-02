@@ -1,0 +1,119 @@
+.type {
+
+    &--h1 {
+        font-weight: 800;
+        font-size: 30px;
+        line-height: 41px;
+        color: #030229;
+    }
+
+    &--h2 {
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 33px;
+        color: #030229;
+    }
+
+    &--h3 {
+        font-weight: 800;
+        font-size: 22px;
+        line-height: 30px;
+        color: #000000;
+        opacity: 0.7;
+    }
+
+    &--h4 {
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 33px;
+        color: #030229;
+    }
+
+    &--body {
+        &_1 {
+            &-600 {
+                font-weight: 600;
+                font-size: 16px;
+                line-height: 22px;
+                color: #030229
+            }
+
+        }
+
+        &_10 {
+
+            &-400 {
+                font-weight: 400;
+                font-size: 10px;
+                line-height: 14px;
+                opacity: 0.5;
+            }
+
+            &-600 {
+                font-weight: 600;
+                font-size: 10px;
+                line-height: 14px;
+            }
+        }
+
+        &_12 {
+
+            &-400 {
+                font-weight: 400;
+                font-size: 12px;
+                line-height: 16px;
+                color: #FFFFFF;
+                opacity: 0.8;
+            }
+
+            &-600 {
+                font-weight: 600;
+                font-size: 12px;
+                line-height: 16px;
+            }
+        }
+
+        &_14 {
+            &-400 {
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 19px;
+                color: #030229;    
+                opacity: 0.7;
+            }
+
+            &-600 {
+                font-weight: 600;
+                font-size: 14px;
+                line-height: 19px;
+                color: #030229;
+                opacity: 0.7;
+            }
+        }
+
+        &_16 {
+            &-400 {
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 22px;
+            }
+
+            &-600 {
+                font-weight: 600;
+                font-size: 16px;
+                line-height: 22px;
+                color: #ffffff;
+            }
+        }
+
+        &_18 {
+            &-700 {
+                font-weight: 700;
+                font-size: 18px;
+                line-height: 25px;
+                color: #030229;
+                opacity: 0.7;
+            }
+        }
+    }
+}

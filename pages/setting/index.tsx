@@ -1,7 +1,8 @@
+import Typography from '@/ui/foundations/typography';
 import React from 'react';
 
 const Settings = () => {
-	return <h1 style={{ margin: 'auto' }}>Settings</h1>;
+	return <Typography type="h2">Settings</Typography>;
 };
 
 export default Settings;

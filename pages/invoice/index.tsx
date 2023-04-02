@@ -1,7 +1,8 @@
+import Typography from '@/ui/foundations/typography';
 import React from 'react';
 
 const Invoice = () => {
-	return <h1 style={{ margin: 'auto' }}>Invoice</h1>;
+	return <Typography type="h2">Invoice</Typography>;
 };
 
 export default Invoice;

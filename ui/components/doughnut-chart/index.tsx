@@ -1,28 +1,11 @@
 import React from 'react';
 import { ResponsivePie } from '@nivo/pie';
+import { DoughnutChartData } from '@/ui/data';
 
 const DoughnutChart = () => {
-	const data = [
-		{
-			id: 'sale',
-			label: 'Sale',
-			value: 268
-		},
-		{
-			id: 'distribute',
-			label: 'Distribute',
-			value: 100
-		},
-		{
-			id: 'return',
-			label: 'Return',
-			value: 138
-		}
-	];
-
 	return (
 		<ResponsivePie
-			data={data}
+			data={DoughnutChartData}
 			margin={{ top: 20, right: 80, bottom: 80, left: 80 }}
 			innerRadius={0.85}
 			cornerRadius={45}
@@ -65,56 +48,6 @@ const DoughnutChart = () => {
 					rotation: -45,
 					lineWidth: 6,
 					spacing: 10
-				}
-			]}
-			fill={[
-				{
-					match: {
-						id: 'ruby'
-					},
-					id: 'dots'
-				},
-				{
-					match: {
-						id: 'c'
-					},
-					id: 'dots'
-				},
-				{
-					match: {
-						id: 'go'
-					},
-					id: 'dots'
-				},
-				{
-					match: {
-						id: 'python'
-					},
-					id: 'dots'
-				},
-				{
-					match: {
-						id: 'scala'
-					},
-					id: 'lines'
-				},
-				{
-					match: {
-						id: 'lisp'
-					},
-					id: 'lines'
-				},
-				{
-					match: {
-						id: 'elixir'
-					},
-					id: 'lines'
-				},
-				{
-					match: {
-						id: 'javascript'
-					},
-					id: 'lines'
 				}
 			]}
 			legends={[

@@ -1,7 +1,8 @@
+import Typography from '@/ui/foundations/typography';
 import React from 'react';
 
 const calendar = () => {
-	return <h1 style={{ margin: 'auto' }}>Calendar</h1>;
+	return <Typography type="h2">Calendar</Typography>;
 };
 
 export default calendar;

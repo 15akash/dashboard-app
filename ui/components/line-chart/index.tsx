@@ -1,87 +1,14 @@
 import React from 'react';
-// import { ResponsiveLine } from '@nivo/line';
 import { ResponsiveLine } from '@nivo/line';
+import { LineChartData } from '@/ui/data';
+import Flexbox from '@/ui/foundations/flexbox';
+import Typography from '@/ui/foundations/typography';
+import styles from './LineChart.module.scss';
 
 const LineChart = () => {
-	const data = [
-		{
-			id: 'norway',
-			color: '#31aaed',
-			data: [
-				{
-					x: 'plane',
-					y: 31
-				},
-				{
-					x: 'helicopter',
-					y: 11
-				},
-				{
-					x: 'boat',
-					y: 75
-				},
-				{
-					x: 'train',
-					y: 95
-				},
-				{
-					x: 'subway',
-					y: 41
-				},
-				{
-					x: 'bus',
-					y: 55
-				},
-				{
-					x: 'car',
-					y: 19
-				},
-				{
-					x: 'moto',
-					y: 47
-				},
-				{
-					x: 'bicycle',
-					y: 90
-				},
-				{
-					x: 'horse',
-					y: 75
-				},
-				{
-					x: 'skateboard',
-					y: 85
-				},
-				{
-					x: 'others',
-					y: 90
-				}
-			]
-		}
-	];
-
-	const styles = {
-		fontFamily: 'sans-serif',
-		textAlign: 'center',
-		background: '#333',
-		padding: '30px'
-	};
-
-	const theme = {
-		axis: {
-			textColor: '#eee',
-			fontSize: '14px',
-			tickColor: '#eee'
-		},
-		grid: {
-			stroke: '#888',
-			strokeWidth: 1
-		}
-	};
-
 	return (
 		<ResponsiveLine
-			data={data}
+			data={LineChartData}
 			theme={{
 				fontSize: 12,
 				textColor: '#030229'
@@ -90,19 +17,25 @@ const LineChart = () => {
 			colors={d => d.color}
 			xScale={{ type: 'point' }}
 			enableGridX={false}
+			yFormat=" >-.2f"
 			yScale={{
 				type: 'linear',
 				stacked: false,
 				reverse: false,
 				min: 0,
-				max: 100,
-				clamp: true,
-				nice: true
+				max: 100
 			}}
-			// yFormat=" >-.1f"
 			curve="natural"
 			axisTop={null}
 			axisRight={null}
+			tooltip={({ point }) => {
+				return (
+					<Flexbox direction="column" gap={3} alignItems="center" className={styles['tooltip']}>
+						<Typography type="body_12-400">Sales</Typography>
+						<Typography type="body_16-600">{point.data.yFormatted}</Typography>
+					</Flexbox>
+				);
+			}}
 			axisBottom={{
 				tickSize: 5,
 				tickPadding: 5,

@@ -1,7 +1,8 @@
+import Typography from '@/ui/foundations/typography';
 import React from 'react';
 
 const Messages = () => {
-	return <h1 style={{ margin: 'auto' }}>Messages</h1>;
+	return <Typography type="h2">Messages</Typography>;
 };
 
 export default Messages;

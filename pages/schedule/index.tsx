@@ -1,7 +1,8 @@
+import Typography from '@/ui/foundations/typography';
 import React from 'react';
 
 const Schdeule = () => {
-	return <h1 style={{ margin: 'auto' }}>Schedule</h1>;
+	return <Typography type="h2">Schedule</Typography>;
 };
 
 export default Schdeule;

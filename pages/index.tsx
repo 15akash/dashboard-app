@@ -12,6 +12,7 @@ import { Menu } from '@/ui/assets/Menu';
 import CardHeader from '@/ui/components/card-header';
 import TopSellingProducts from '@/ui/components/top-selling-products';
 import RecentOrders from '@/ui/components/recent-orders';
+import Typography from '@/ui/foundations/typography';
 
 export default function Home() {
 	const menuCtx = useContext(MenuContext);
@@ -29,7 +30,7 @@ export default function Home() {
 		<Flexbox direction="column" width="100%">
 			<Flexbox direction="column" gap={30} className={styles['homepage']}>
 				<Flexbox justifyContent="space-between" className={styles['homepage--header']}>
-					<h1>Dashboard</h1>
+					<Typography type="h2">Dashboard</Typography>
 					<Flexbox gap={15}>
 						<DatePicker date="10-06-2021" />
 						<DatePicker date="10-10-2023" />
@@ -51,8 +52,10 @@ export default function Home() {
 				<Card className={styles['doughnut']}>
 					<CardHeader heading="Analytics" />
 					<Flexbox direction="column" alignItems="center" className={styles['transactions']}>
-						<h1>80%</h1>
-						<h5>Transactions</h5>
+						<Typography el="h1">80%</Typography>
+						<Typography type="body_16-400" colorStyle="#030229" opacity={0.7}>
+							Transactions
+						</Typography>
 					</Flexbox>
 					<div style={{ width: '90%', position: 'absolute', height: '80%', bottom: '0' }}>
 						<DoughnutChart />

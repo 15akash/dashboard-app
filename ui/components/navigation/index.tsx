@@ -1,4 +1,4 @@
-import React, { useMemo, useState, useContext } from 'react';
+import React, { useMemo, useContext } from 'react';
 import styles from './Navigation.module.scss';
 import Flexbox from '@/ui/foundations/flexbox';
 import { Logo, Dashboard, Analytics, Invoice, Schedule, Calendar, Messages, Notification, Setting, Logout } from '@/ui/assets/menu-icons';
@@ -8,6 +8,7 @@ import { ProfilePhoto } from '@/ui/assets/ProfilePhoto';
 import { MenuItem } from '@/ui/interface';
 import MenuContext from '@/ui/store/menu-context';
 import Link from 'next/link';
+import Typography from '@/ui/foundations/typography';
 
 const Navigation = () => {
 	const menuCtx = useContext(MenuContext);
@@ -38,7 +39,7 @@ const Navigation = () => {
 			<Flexbox direction="column" className={styles['navigation-logo-menu']}>
 				<Flexbox direction={menuCtx.isMenuCollapsed ? 'column' : 'row'} gap={15} alignItems="center" justifyContent="center" className={styles['navigation--logo']}>
 					<Logo />
-					<h4>Base</h4>
+					<Typography type="h4">Base</Typography>
 				</Flexbox>
 				{menuItems.map((item: MenuItem) => {
 					return (
@@ -46,11 +47,15 @@ const Navigation = () => {
 							<Flexbox onClick={() => menuCtx.changeActiveMenu(item.id)} alignItems="center">
 								{item.iconName}
 								{!menuCtx.isMenuCollapsed && (
-									<p className={styles['navigation--item--text']} style={menuCtx.activeMenu == item.id ? { color: '#605bff' } : {}}>
+									<Typography type="body_1-600" el="p" className={styles['navigation--item-text']} opacity={0.5}>
 										{item.displayName}
-									</p>
+									</Typography>
 								)}
-								{item.id === 'messages' && !menuCtx.isMenuCollapsed && <p className={styles['navigation--item-count']}>49</p>}
+								{item.id === 'messages' && !menuCtx.isMenuCollapsed && (
+									<Typography type="body_10-600" className={styles['navigation--item-count']}>
+										49
+									</Typography>
+								)}
 								<div className={menuCtx.activeMenu === item.id ? styles['navigation--active-icon'] : ''}></div>
 							</Flexbox>
 						</Link>
@@ -68,8 +73,10 @@ const Navigation = () => {
 					<ProfilePhoto />
 					{!menuCtx.isMenuCollapsed && (
 						<Flexbox direction="column">
-							<h5>Easin Arafat</h5>
-							<p>Free Account</p>
+							<Typography type="body_12-600">Easin Arafat</Typography>
+							<Typography type="body_10-400" opacity={0.5}>
+								Free Account
+							</Typography>
 						</Flexbox>
 					)}
 					<Flexbox
