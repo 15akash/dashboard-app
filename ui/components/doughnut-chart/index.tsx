@@ -23,7 +23,7 @@ const DoughnutChart = () => {
 	return (
 		<ResponsivePie
 			data={data}
-			margin={{ top: 40, right: 80, bottom: 80, left: 80 }}
+			margin={{ top: 20, right: 80, bottom: 80, left: 80 }}
 			innerRadius={0.85}
 			cornerRadius={45}
 			startAngle={0}
@@ -40,6 +40,9 @@ const DoughnutChart = () => {
 			arcLinkLabelsThickness={2}
 			arcLinkLabelsColor={{ from: 'color' }}
 			arcLabelsRadiusOffset={0.45}
+			enableArcLabels={false}
+			enableArcLinkLabels={false}
+			padAngle={0}
 			arcLabelsTextColor={{
 				from: 'color',
 				modifiers: [['darker', 1.9]]

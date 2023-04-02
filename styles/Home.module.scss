@@ -37,12 +37,41 @@
         object-fit: contain;
         overflow: hidden;
     }
+
+    .transactions {
+        margin: auto;
+
+        h1 {
+            font-weight: 800;
+            font-size: 30px;
+            line-height: 41px;
+            color: #030229;
+        }
+
+        h5 {
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 22px;
+            color: #030229;
+            opacity: 0.7;
+        }
+    }
     
     .doughnut {
+        display: flex;
+        flex-direction: column !important;
         position: relative;
         height: 100%;
-        // right: 0;
         flex: 1;
+        width: 40%;
+
     }
 }
 
+.product-details {
+    margin-top: 30px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 0.62fr 0.39fr;
+    column-gap: 30px;
+}

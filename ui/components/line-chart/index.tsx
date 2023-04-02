@@ -60,22 +60,46 @@ const LineChart = () => {
 		}
 	];
 
+	const styles = {
+		fontFamily: 'sans-serif',
+		textAlign: 'center',
+		background: '#333',
+		padding: '30px'
+	};
+
+	const theme = {
+		axis: {
+			textColor: '#eee',
+			fontSize: '14px',
+			tickColor: '#eee'
+		},
+		grid: {
+			stroke: '#888',
+			strokeWidth: 1
+		}
+	};
+
 	return (
 		<ResponsiveLine
 			data={data}
+			theme={{
+				fontSize: 12,
+				textColor: '#030229'
+			}}
 			margin={{ top: 20, right: 30, bottom: 50, left: 30 }}
 			colors={d => d.color}
 			xScale={{ type: 'point' }}
 			enableGridX={false}
 			yScale={{
 				type: 'linear',
-
-				// min: 'auto'
-				max: 'auto',
-				stacked: true,
-				reverse: false
+				stacked: false,
+				reverse: false,
+				min: 0,
+				max: 100,
+				clamp: true,
+				nice: true
 			}}
-			yFormat=" >-.2f"
+			// yFormat=" >-.1f"
 			curve="natural"
 			axisTop={null}
 			axisRight={null}
@@ -89,6 +113,7 @@ const LineChart = () => {
 			axisLeft={{
 				tickSize: 5,
 				tickPadding: 5,
+				tickValues: [0, 20, 40, 60, 80, 100],
 				tickRotation: 0,
 				legend: 'count',
 				legendOffset: -40,
@@ -104,12 +129,8 @@ const LineChart = () => {
 			enableArea={true}
 			areaBlendMode="multiply"
 			areaBaselineValue={0}
-			areaOpacity={0.1}
+			areaOpacity={0.05}
 			useMesh={true}
-			sliceTooltip={({ slice }) => {
-				console.log('slice', slice);
-				return <div style={{ background: 'white', padding: '9px 12px', border: '1px solid black' }}></div>;
-			}}
 			legends={[
 				{
 					anchor: 'bottom-right',
