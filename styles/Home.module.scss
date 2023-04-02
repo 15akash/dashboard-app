@@ -23,6 +23,13 @@
     &--header {
         width: 100%;
     }  
+
+    &--summary {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
+        width: 100%;
+    }
 }
 
 .charts {
@@ -30,41 +37,28 @@
     width: 100%;
     margin-top: 30px;
 
-    .linechart {
+    &--linechart {
         position: relative;
         height: 100%;
         width: 60%;
-        object-fit: contain;
         overflow: hidden;
+        min-width: 400px;
     }
 
-    .transactions {
-        margin: auto;
-
-        h1 {
-            font-weight: 800;
-            font-size: 30px;
-            line-height: 41px;
-            color: #030229;
-        }
-
-        h5 {
-            font-weight: 400;
-            font-size: 16px;
-            line-height: 22px;
-            color: #030229;
-            opacity: 0.7;
-        }
-    }
+   
     
-    .doughnut {
+    &--doughnut {
         display: flex;
         flex-direction: column !important;
         position: relative;
         height: 100%;
         flex: 1;
         width: 40%;
+        min-height: 350px;
 
+        &-transactions {
+            margin: auto;
+        }
     }
 }
 
@@ -74,4 +68,35 @@
     display: grid;
     grid-template-columns: 0.62fr 0.39fr;
     column-gap: 30px;
+}
+
+@media screen and (max-width: '1200px') {
+    .homepage {
+        &--summary {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    .charts {
+        flex-direction: column !important;
+        width: 100%;
+        min-height: 800px;
+        height: 100%;
+
+        &--linechart {
+            width: 100%;
+        }
+
+        &--doughnut {
+            width: 100%;
+        }
+    }
+}
+
+@media screen and (max-width: '800px') {
+    .homepage {
+        &--summary {
+            grid-template-columns: 1fr;
+        }
+    }
 }

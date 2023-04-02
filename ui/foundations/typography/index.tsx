@@ -4,8 +4,6 @@ const varients = [
 	'h2',
 	'h3',
 	'h4',
-	'h5',
-	'h6',
 	'body_12-600',
 	'body_1-600',
 	'body_10-400',

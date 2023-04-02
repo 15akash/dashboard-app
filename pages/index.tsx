@@ -35,28 +35,28 @@ export default function Home() {
 						<DatePicker date="10-10-2023" />
 					</Flexbox>
 				</Flexbox>
-				<Flexbox width="100%" alignItems="center" gap={30}>
+				<div className={styles['homepage--summary']}>
 					{productSummary.map(product => {
 						return <ProductSummary key={product.id} {...product} />;
 					})}
-				</Flexbox>
+				</div>
 			</Flexbox>
 			<Flexbox gap={30} className={styles['charts']}>
-				<Card className={styles['linechart']}>
+				<Card className={styles['charts--linechart']}>
 					<CardHeader heading="Reports" />
 					<div style={{ width: '100%', position: 'absolute', height: '80%', bottom: '0' }}>
 						<LineChart />
 					</div>
 				</Card>
-				<Card className={styles['doughnut']}>
+				<Card className={styles['charts--doughnut']}>
 					<CardHeader heading="Analytics" />
-					<Flexbox direction="column" alignItems="center" className={styles['transactions']}>
+					<Flexbox direction="column" alignItems="center" className={styles['charts--doughnut-transactions']}>
 						<Typography el="h1">80%</Typography>
 						<Typography type="body_16-400" colorStyle="#030229" opacity={0.7}>
 							Transactions
 						</Typography>
 					</Flexbox>
-					<div style={{ width: '90%', position: 'absolute', height: '80%', bottom: '0' }}>
+					<div style={{ width: '100%', position: 'absolute', height: '80%', right: '5px', bottom: '0' }}>
 						<DoughnutChart />
 					</div>
 				</Card>

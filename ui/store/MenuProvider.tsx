@@ -4,7 +4,7 @@ import { IActionType } from '../interface';
 import { useRouter } from 'next/router';
 
 const defaultMenuState = {
-	isMenuCollapsed: false
+	isMenuCollapsed: true
 };
 
 const menuReducer = (state: any, action: IActionType) => {
