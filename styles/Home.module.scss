@@ -100,3 +100,19 @@
         }
     }
 }
+
+@media screen and (max-width: '600px') {
+
+    .homepage {
+        &--header {
+            flex-direction: column !important;
+        }
+    }
+    .charts {
+        &--doughnut {
+            &-transactions {
+                margin: 0 auto;
+            }
+        }
+    }
+}
