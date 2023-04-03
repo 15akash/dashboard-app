@@ -39,7 +39,9 @@ const Navigation = () => {
 			<Flexbox direction="column" className={styles['navigation-logo-menu']}>
 				<Flexbox direction={menuCtx.isMenuCollapsed ? 'column' : 'row'} gap={15} alignItems="center" justifyContent="center" className={styles['navigation--logo']}>
 					<Logo />
-					<Typography type="h4">Base</Typography>
+					<Typography type="h4" el="h4">
+						Base
+					</Typography>
 				</Flexbox>
 				{menuItems.map((item: MenuItem) => {
 					return (

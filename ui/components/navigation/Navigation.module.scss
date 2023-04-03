@@ -1,7 +1,7 @@
 @import '../../../styles//variables';
 
 .navigation-mobile {
-    width: 80px !important;
+    width: 60px !important;
 }
 
 .navigation {
@@ -96,5 +96,15 @@
         &--bottom {
             display: none !important;
         }
+
+        &--item {
+            padding: 10px 15px;
+        }
+
+        h4 {
+            font-size: 20px !important;
+        }
     }
+
+   
 }
