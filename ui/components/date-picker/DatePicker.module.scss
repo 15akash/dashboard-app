@@ -1,5 +1,7 @@
+@import '../../../styles/variables';
+
 .date-picker {
-    background: #FFFFFF;
+    background: $primary-text-white;
     border-radius: 5px;
     padding: 10px 15px;
 }

@@ -1,7 +1,9 @@
+@import '../../../styles/variables';
+
 .tooltip {
-    background: #030229;
+    background: $primary-text-black;
     padding: 8px 20px;
-	color: white;
+	color: $primary-text-white;
 	border-radius: 10px;
-	border: 1px solid #ccc;
+	border: 1px solid $border-gray;
 }

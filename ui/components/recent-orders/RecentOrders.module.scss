@@ -1,3 +1,5 @@
+@import '../../../styles/variables';
+
 .recent-orders {
     flex-direction: column !important;
 
@@ -5,7 +7,7 @@
     &--heading {
         display: grid;
         grid-template-columns: repeat(5, 1fr);
-        border-bottom: 1px solid #f1f1f1;
+        border-bottom: 1px solid $border-light-gray;
         width: 100%;
         padding: 15px;
         row-gap: 10px;
@@ -22,7 +24,7 @@
         column-gap: 15px;
 
         &--order {
-            background: #eaf9fd;
+            background: $secondary-light-blue;
             border-radius: 8px;
             padding: 7px 20px;
             width: 60px;
