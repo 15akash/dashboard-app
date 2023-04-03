@@ -1,3 +1,20 @@
 .top-selling {
     flex-direction: column !important;
+
+    &--product-section {
+        margin-top: 24px;
+        width: 100%;
+
+        &--item {
+            width: 100%;
+
+            &--desc {
+                padding: 10px 0;
+            }
+        }
+
+        &--item:last-child div {
+            display: none;
+        }
+    }
 }

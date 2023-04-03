@@ -62,8 +62,8 @@
                 font-weight: 400;
                 font-size: 12px;
                 line-height: 16px;
-                color: #FFFFFF;
-                opacity: 0.8;
+                color: #030229;
+                opacity: 1;
             }
 
             &-600 {
@@ -88,6 +88,15 @@
                 line-height: 19px;
                 color: #030229;
                 opacity: 0.7;
+            }
+        }
+
+        &_15 {
+            &-400 {
+                font-weight: 400;
+                font-size: 15px;
+                line-height: 20px;
+                color: #000000;
             }
         }
 

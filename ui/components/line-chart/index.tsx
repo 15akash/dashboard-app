@@ -1,6 +1,6 @@
 import React from 'react';
 import { ResponsiveLine } from '@nivo/line';
-import { LineChartData } from '@/ui/data';
+import { LineChartData } from '@/ui/data/ChartData';
 import Flexbox from '@/ui/foundations/flexbox';
 import Typography from '@/ui/foundations/typography';
 import styles from './LineChart.module.scss';
@@ -31,7 +31,9 @@ const LineChart = () => {
 			tooltip={({ point }) => {
 				return (
 					<Flexbox direction="column" gap={3} alignItems="center" className={styles['tooltip']}>
-						<Typography type="body_12-400">Sales</Typography>
+						<Typography type="body_12-400" colorStyle="#fff" opacity={0.8}>
+							Sales
+						</Typography>
 						<Typography type="body_16-600">{point.data.yFormatted}</Typography>
 					</Flexbox>
 				);

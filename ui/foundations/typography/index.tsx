@@ -11,6 +11,7 @@ const varients = [
 	'body_12-400',
 	'body_14-400',
 	'body_14-600',
+	'body_15-400',
 	'body_16-400',
 	'body_16-600',
 	'body_18-700'

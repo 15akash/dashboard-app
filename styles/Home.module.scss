@@ -91,6 +91,11 @@
             width: 100%;
         }
     }
+
+    .product-details {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
 }
 
 @media screen and (max-width: '800px') {

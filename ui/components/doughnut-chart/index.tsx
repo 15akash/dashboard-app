@@ -1,6 +1,6 @@
 import React from 'react';
 import { ResponsivePie } from '@nivo/pie';
-import { DoughnutChartData } from '@/ui/data';
+import { DoughnutChartData } from '@/ui/data/ChartData';
 
 const DoughnutChart = () => {
 	return (
