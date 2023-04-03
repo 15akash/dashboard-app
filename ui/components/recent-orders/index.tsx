@@ -1,6 +1,6 @@
 import styles from './RecentOrders.module.scss';
 import Card from '@/ui/foundations/card';
-import React, { useMemo } from 'react';
+import React from 'react';
 import CardHeader from '../card-header';
 import Flexbox from '@/ui/foundations/flexbox';
 import Typography from '@/ui/foundations/typography';
@@ -21,26 +21,26 @@ const RecentOrders = () => {
 					);
 				})}
 			</div>
-			<div className={styles['recent-orders--table']}>
-				{recentOrdersData.map(order => {
-					return (
-						<>
-							<Typography type="body_12-400">{order.trackingNo}</Typography>
-							<Flexbox gap={10} alignItems="center">
-								<Image src={order.prodImg} alt={order.trackingNo} />
-								<Typography type="body_12-400">{order.productName}</Typography>
-							</Flexbox>
-							<Typography type="body_12-400">{order.price}</Typography>
-							<Flexbox className={styles['recent-orders--table--order']}>
-								<Typography type="body_12-400" colorStyle="#26C0E2">
-									{order.totalOrder}
-								</Typography>
-							</Flexbox>
-							<Typography type="body_12-400">{order.totalAmount}</Typography>
-						</>
-					);
-				})}
-			</div>
+			{recentOrdersData.map(order => {
+				return (
+					<div className={styles['recent-orders--table']} key={order.trackingNo}>
+						<Typography key={order.trackingNo} type="body_12-400">
+							{order.trackingNo}
+						</Typography>
+						<Flexbox gap={10} alignItems="center">
+							<Image src={order.prodImg} alt={order.trackingNo} />
+							<Typography type="body_12-400">{order.productName}</Typography>
+						</Flexbox>
+						<Typography type="body_12-400">{order.price}</Typography>
+						<Flexbox className={styles['recent-orders--table--order']}>
+							<Typography type="body_12-400" colorStyle="#26C0E2">
+								{order.totalOrder}
+							</Typography>
+						</Flexbox>
+						<Typography type="body_12-400">{order.totalAmount}</Typography>
+					</div>
+				);
+			})}
 		</Card>
 	);
 };

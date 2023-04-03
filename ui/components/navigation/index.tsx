@@ -44,7 +44,7 @@ const Navigation = () => {
 				{menuItems.map((item: MenuItem) => {
 					return (
 						<Link className={styles['navigation--item']} href={item.id === 'dashboard' ? '/' : `/${item.id}`} key={item.id}>
-							<Flexbox onClick={() => menuCtx.changeActiveMenu(item.id)} alignItems="center">
+							<Flexbox alignItems="center">
 								{item.iconName}
 								{!menuCtx.isMenuCollapsed && (
 									<Typography type="body_1-600" el="p" className={styles['navigation--item-text']} opacity={0.5}>

@@ -20,15 +20,12 @@ const menuReducer = (state: any, action: IActionType) => {
 const MenuProvider = (props: any) => {
 	const router = useRouter().pathname;
 
-	const activeMenu = useMemo(() => router.slice(1, router.length) ?? 'dashboard', [router]);
+	const activeMenu = useMemo(() => (router.length > 1 ? router.slice(1, router.length) : 'dashboard'), [router]);
 
 	const [menuState, dispatchMenuAction] = useReducer(menuReducer, defaultMenuState);
 
 	const menuContext = {
 		activeMenu: activeMenu,
-		changeActiveMenu: (menu: string) => {
-			dispatchMenuAction({ type: 'CHANGE_MENU', item: menu });
-		},
 		isMenuCollapsed: menuState.isMenuCollapsed,
 		toggleMenu: (toggle: boolean) => {
 			dispatchMenuAction({ type: 'TOGGLE_MENU', item: toggle });
